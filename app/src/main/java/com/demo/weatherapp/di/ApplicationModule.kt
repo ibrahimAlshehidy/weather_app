@@ -1,7 +1,10 @@
 package com.demo.weatherapp.di
 
 import com.demo.weatherapp.BuildConfig
+import com.demo.weatherapp.features.home.data.MainRepositoryImp
 import com.demo.weatherapp.features.home.data.remote.ApiService
+import com.demo.weatherapp.features.home.domain.MainRepository
+import dagger.Binds
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -47,6 +50,13 @@ object ApplicationModule {
     @Singleton
     fun provideApiService(retrofit: Retrofit): ApiService = retrofit.create(ApiService::class.java)
 
+    @InstallIn(SingletonComponent::class)
+    @Module
+    abstract class RepositoriesModule {
+        @Singleton
+        @Binds
+        abstract fun bindMainRepository(mainRepository: MainRepositoryImp?): MainRepository
+    }
 }
 
 
