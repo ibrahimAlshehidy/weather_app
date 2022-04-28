@@ -10,4 +10,5 @@
     <color name="light_blue">#F1F4FF</color>
     <color name="text_color">#444E72</color>
     <color name="background_color">#002762</color>
+    <color name="hint_color">#838BAA</color>
 </resources>
