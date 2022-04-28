@@ -1,4 +1,4 @@
-package com.demo.weatherapp.features.home.ui.activities
+package com.demo.weatherapp.features.home.presentation.ui.activities
 
 import com.demo.weatherapp.databinding.ActivityMainBinding
 import com.demo.weatherapp.utils.views.BaseActivity
