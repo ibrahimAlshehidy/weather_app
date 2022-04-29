@@ -12,10 +12,10 @@ interface ApiService {
     suspend fun getSearchCities(
         @Query("q") cityName: String? = null,
         @Query("key") appKey: String = BuildConfig.WEATHER_API_KEY
-    ): CitiesData
+    ): List<CitiesData>
 
     @GET(AppUrls.cityWetherForcast)
-    suspend fun getCityWeatherForcast(
+    suspend fun getCityWeatherForecast(
         @Query("q") cityName: String? = null,
         @Query("key") appKey: String = BuildConfig.WEATHER_API_KEY,
         @Query("days") days: String = BuildConfig.FORCAST_DAYS

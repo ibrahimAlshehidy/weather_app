@@ -17,10 +17,10 @@ class MainViewModel @Inject constructor(
     private val getCityWeatherForecastUseCase: GetCityWeatherForecastUseCase
 ) : ViewModel() {
 
-    fun getSearchCities(cityName: String?): LiveData<Resource<CitiesData>> =
+    fun getSearchCities(cityName: String?): LiveData<Resource<List<CitiesData>>> =
         getSearchCitiesUseCase.get(cityName).asMappedResourceLiveData()
 
-    fun getCityWeatherForcast(cityName: String): LiveData<Resource<CityWeatherDetailsData>> =
+    fun getCityWeatherForecast(cityName: String): LiveData<Resource<CityWeatherDetailsData>> =
         getCityWeatherForecastUseCase.get(cityName).asMappedResourceLiveData()
 
 }

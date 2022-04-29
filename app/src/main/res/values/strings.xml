@@ -3,4 +3,7 @@
     <string name="searchCity">Search City</string>
     <string name="today">Today</string>
     <string name="tomorrow">Tomorrow</string>
+    <string name="noCity">No city with this name</string>
+    <string name="somthingWentWrong">Sorry, something went wrong</string>
+    <string name="fahrenheit">°F</string>
 </resources>

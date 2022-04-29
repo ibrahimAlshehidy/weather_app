@@ -7,6 +7,6 @@ import javax.inject.Inject
 
 class GetSearchCitiesUseCase @Inject constructor(private val mainRepository: MainRepository) {
 
-    fun get(cityName: String?): Flow<Resource<CitiesData>> =
+    fun get(cityName: String?): Flow<Resource<List<CitiesData>>> =
         mainRepository.getSearchCities(cityName)
 }

@@ -12,7 +12,7 @@ import javax.inject.Inject
 
 class MainRepositoryImp @Inject constructor(private val apiService: ApiService) : MainRepository {
 
-    override fun getSearchCities(cityName: String?): Flow<Resource<CitiesData>> {
+    override fun getSearchCities(cityName: String?): Flow<Resource<List<CitiesData>>> {
         return flow {
             emit(Resource.loading())
             try {
@@ -28,7 +28,7 @@ class MainRepositoryImp @Inject constructor(private val apiService: ApiService) 
         return flow {
             emit(Resource.loading())
             try {
-                val apiResponse = apiService.getCityWeatherForcast(cityName)
+                val apiResponse = apiService.getCityWeatherForecast(cityName)
                 emit(Resource.success(apiResponse))
             } catch (e: IOException) {
                 emit(Resource.error())
